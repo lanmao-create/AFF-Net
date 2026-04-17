@@ -7,7 +7,7 @@ Visual analysis of the weight generation pathway in the proposed frequency-adapt
 
 ![result](Visualization/Baseline.png)
 The baseline fusion method (standard channel-wise concatenation). (a) Raw VIS and DSM input images. (b) Feature heatmaps (Following standard heatmap visualization conventions, warmer colors (e.g., dark red) denote regions with high activation responses). (c) The final fused feature heatmap obtained by directly concatenating the extracted features along the channel dimension, without frequency decomposition or adaptive spatial weighting.
-
+ 
 ![result](Visualization/SDA.png)
 Visual analysis of the high-frequency detail alignment process in the decoder. (a) Visualization of the target detail map generation. It displays the high-frequency details extracted from the original input image and the residual calculated against the current decoder features, representing the missing spatial details that require supplementation. (b) The refined decoder feature heatmap after the high-frequency detail compensation, the clearly delineated boundary responses demonstrate the successful restoration of spatial structures.
 
@@ -22,5 +22,5 @@ Visualization of segmentation results and corresponding error maps on the ISPRS 
 | Type | Method | Params (M) | FLOPs (G) | FPS | BF1 | BIoU | mF1 | mIoU |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Transformer-based | FTransUNet | 203.40 | 112.22 | 19.7 | 80.10 | 70.12 | 91.21 | 84.23 |
-| | MFNet | 56.01 | 82.46 | 22.5 | 80.25 | 71.05 | 91.09 | 83.96 |
-| | **AFF-Net(ours)** | **173.47** | **116.34** | **20.3** | **92.61** | **82.24** | **91.61** | **84.87** |
+| Transformer-based | MFNet | 56.01 | 82.46 | 22.5 | 80.25 | 71.05 | 91.09 | 83.96 |
+| Transformer-based | **AFF-Net(ours)** | **173.47** | **116.34** | **20.3** | **92.61** | **82.24** | **91.61** | **84.87** |
