@@ -10,3 +10,17 @@ The baseline fusion method (standard channel-wise concatenation). (a) Raw VIS an
 
 ![result](Visualization/SDA.png)
 Visual analysis of the high-frequency detail alignment process in the decoder. (a) Visualization of the target detail map generation. It displays the high-frequency details extracted from the original input image and the residual calculated against the current decoder features, representing the missing spatial details that require supplementation. (b) The refined decoder feature heatmap after the high-frequency detail compensation, the clearly delineated boundary responses demonstrate the successful restoration of spatial structures.
+
+![result](Visualization/vaihingen_all.png)
+Visualization of segmentation results and corresponding error maps on the ISPRS Vaihingen dataset. (a) Image. (b) Ground truth. (c–i) Segmentation results of different methods, including ABCNet, CMTFNet, UNetformer, FTUNetformer, MFNet, FTransUNet, and the proposed method. For each method, the first column (denoted as 1, i.e., c1–i1) shows the predicted segmentation maps, while the second column (denoted as 2, i.e., c2–i2) presents the corresponding error maps.
+
+![result](Visualization/potsdam_all.png)
+Visualization of segmentation results and corresponding error maps on the ISPRS Potsdam dataset. (a) Image. (b) Ground truth. (c–j) Segmentation results of different methods, including ABCNet, A2-FPN, Dcswin, UNetformer, FTUNetformer, MFNet, FTransUNet, and the proposed method. For each method, the first column (denoted as 1, i.e., c1–j1) shows the predicted segmentation maps, while the second column (denoted as 2, i.e., c2–j2) presents the corresponding error maps.
+
+#### Table 2: Quantitative Comparison of Computational Efficiency and Segmentation Performance (Vaihingen Dataset)
+
+| Type | Method | Params (M) | FLOPs (G) | FPS | BF1 | BIoU | mF1 | mIoU |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Transformer-based | FTransUNet | 203.40 | 112.22 | 19.7 | 80.10 | 70.12 | 91.21 | 84.23 |
+| | MFNet | 56.01 | 82.46 | 22.5 | 80.25 | 71.05 | 91.09 | 83.96 |
+| | **AFF-Net(ours)** | **173.47** | **116.34** | **20.3** | **92.61** | **82.24** | **91.61** | **84.87** |
